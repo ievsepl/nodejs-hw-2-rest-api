@@ -41,7 +41,7 @@ const updContactValidator = () => {
 };
 
 const favoriteValidator = () => {
-  const schema = Joi.object({ favorite: Joi.bool() });
+  const schema = Joi.object({ favorite: Joi.bool().required() });
 
   return (req, res, next) => {
     const { error } = schema.validate(req.body);

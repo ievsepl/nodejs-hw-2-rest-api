@@ -13,9 +13,9 @@ exports.updateStatusContact = async (req, res) => {
   );
 
   if (!contact) {
-    return res.status("404").json({
+    return res.status(404).json({
       msg: "Not Found!",
     });
   }
-  res.status("200").json(contact);
+  res.status(200).json(contact);
 };
