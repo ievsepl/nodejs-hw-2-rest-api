@@ -4,7 +4,11 @@ const {
   updContactValidator,
   favoriteValidator,
 } = require("./joiContactValidator");
-const { userValidator, userLoginValidator } = require("./joiUserValidator");
+const {
+  userValidator,
+  userLoginValidator,
+  subscriptionValidator,
+} = require("./joiUserValidator");
 const { auth } = require("./auth");
 
 module.exports = {
@@ -15,4 +19,5 @@ module.exports = {
   userValidator,
   userLoginValidator,
   auth,
+  subscriptionValidator,
 };

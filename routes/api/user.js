@@ -3,11 +3,13 @@ const router = express.Router();
 
 const controllers = require("../../controllers/user/index");
 const validator = require("../../middleWares/index");
-router.route("/").patch(
-  // validator.userValidator(),
-  validator.auth,
-  validator.ctrlWrapper(controllers.updateUserStatus)
-);
+router
+  .route("/")
+  .patch(
+    validator.auth,
+    validator.subscriptionValidator(),
+    validator.ctrlWrapper(controllers.updateUserStatus)
+  );
 
 router
   .route("/register")

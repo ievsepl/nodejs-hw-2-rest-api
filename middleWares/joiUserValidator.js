@@ -41,4 +41,20 @@ const userLoginValidator = () => {
     next();
   };
 };
-module.exports = { userValidator, userLoginValidator };
+
+const subscriptionValidator = () => {
+  const schema = Joi.object({ subscription: Joi.string().required() });
+
+  return (req, res, next) => {
+    const { error } = schema.validate(req.body);
+
+    if (error) {
+      console.log(error);
+      return res.status(400).json({
+        message: "missing field favorite",
+      });
+    }
+    next();
+  };
+};
+module.exports = { userValidator, userLoginValidator, subscriptionValidator };
