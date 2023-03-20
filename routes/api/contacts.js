@@ -5,8 +5,9 @@ const controllers = require("../../controllers/contacts/index");
 const validator = require("../../middleWares/index");
 router
   .route("/")
-  .get(validator.ctrlWrapper(controllers.listContacts))
+  .get(validator.auth, validator.ctrlWrapper(controllers.listContacts))
   .post(
+    validator.auth,
     validator.contactValidator(),
     validator.ctrlWrapper(controllers.addContact)
   );

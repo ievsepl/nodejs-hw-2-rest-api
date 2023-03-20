@@ -1,0 +1,13 @@
+const login = require("./controller.login");
+const logout = require("./controller.logout");
+const register = require("./controller.register");
+const currentUser = require("./controller.currentUser");
+const updateUserStatus = require("./controller.updateUserStatus");
+
+module.exports = {
+  login,
+  logout,
+  register,
+  currentUser,
+  updateUserStatus,
+};
