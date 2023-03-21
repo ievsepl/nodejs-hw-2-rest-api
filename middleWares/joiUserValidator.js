@@ -4,8 +4,8 @@ const userValidator = () => {
   const schema = Joi.object({
     email: Joi.string().required(),
     password: Joi.string().min(6).required(),
-    subscription: Joi.string().required(),
-    token: Joi.string().required(),
+    // subscription: Joi.string().required(),
+    // token: Joi.string().required(),
   });
 
   return (req, res, next) => {
