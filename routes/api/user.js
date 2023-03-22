@@ -28,6 +28,6 @@ router
 
 router
   .route("/current")
-  .get(validator.auth, validator.ctrlWrapper(controllers.currentUser));
+  .post(validator.auth, validator.ctrlWrapper(controllers.currentUser));
 
 module.exports = router;

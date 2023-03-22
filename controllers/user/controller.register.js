@@ -19,13 +19,9 @@ const register = async (req, res) => {
   const subscription = newUser.subscription;
 
   res.status(201).json({
-    Status: "Created",
-    code: 201,
-    ResponseBody: {
-      user: {
-        email,
-        subscription,
-      },
+    user: {
+      email,
+      subscription,
     },
   });
 };

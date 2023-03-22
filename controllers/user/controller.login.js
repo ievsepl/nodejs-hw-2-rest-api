@@ -23,14 +23,10 @@ const login = async (req, res) => {
   // const decodeToken = jwt.decode(token);
   await User.findByIdAndUpdate(user._id, { token });
   res.status(200).json({
-    Status: "Success",
-    code: 200,
-    ResponseBody: {
-      token: token,
-      user: {
-        email,
-        subscription,
-      },
+    token: token,
+    user: {
+      email,
+      subscription,
     },
   });
 };
