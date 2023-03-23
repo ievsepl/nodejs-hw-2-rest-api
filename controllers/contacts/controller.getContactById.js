@@ -1,6 +1,5 @@
 // const { getContactById } = require("../../models/contacts");
 const { Contact } = require("../../models");
-
 exports.getContactById = async (req, res) => {
   const contactId = req.params.contactId;
 
