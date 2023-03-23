@@ -10,6 +10,7 @@ const {
   subscriptionValidator,
 } = require("./joiUserValidator");
 const { auth } = require("./auth");
+const { upload } = require("./upload");
 
 module.exports = {
   ctrlWrapper,
@@ -20,4 +21,5 @@ module.exports = {
   userLoginValidator,
   auth,
   subscriptionValidator,
+  upload,
 };
