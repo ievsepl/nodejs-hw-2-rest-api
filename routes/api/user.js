@@ -3,6 +3,7 @@ const router = express.Router();
 
 const controllers = require("../../controllers/user/index");
 const validator = require("../../middleWares/index");
+
 router
   .route("/")
   .patch(
@@ -37,5 +38,11 @@ router
     validator.upload.single("avatar"),
     validator.ctrlWrapper(controllers.updAvatar)
   );
+
+router
+  .route("/verify/:verificationToken")
+  .get(validator.ctrlWrapper(controllers.verifyEmail));
+
+router.route("/verify").post(validator.ctrlWrapper(controllers.resendEmail));
 
 module.exports = router;
