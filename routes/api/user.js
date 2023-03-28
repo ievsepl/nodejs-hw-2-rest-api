@@ -30,4 +30,12 @@ router
   .route("/current")
   .post(validator.auth, validator.ctrlWrapper(controllers.currentUser));
 
+router
+  .route("/avatar")
+  .patch(
+    validator.auth,
+    validator.upload.single("avatar"),
+    validator.ctrlWrapper(controllers.updAvatar)
+  );
+
 module.exports = router;
