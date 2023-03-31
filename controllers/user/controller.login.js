@@ -18,6 +18,10 @@ const login = async (req, res) => {
     res.status(401).json({ message: "Email or password is wrong" });
   }
 
+  if (!user.verify) {
+    res.status(401).json({ message: "Verify is wrong" });
+  }
+
   const payload = { id: user._id };
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1h" });
   // const decodeToken = jwt.decode(token);
